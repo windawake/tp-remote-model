@@ -1,0 +1,17 @@
+{
+    "name": "windawake/tp-remote-model",
+    "description": "Convert remote API data into tp5 model",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Windawake\\TpRemoteModel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "fengchezhi",
+            "email": "619146134@qq.com"
+        }
+    ],
+    "require": {}
+}
