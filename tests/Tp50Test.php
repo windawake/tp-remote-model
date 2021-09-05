@@ -40,4 +40,17 @@ class Tp50Test extends TestCase {
         $item = OrderRemote::with(['orderDetails.product'])->where('oid', 1)->find();
         var_dump($item->toJson());
     }
+
+    public function testUpdate()
+    {
+        $item = ProductRemote::where('pid', 1)->find();
+        var_dump($item->toJson());
+        $item->name = 'php book';
+        $item->save();
+
+        $product = ProductRemote::where('pid', 1)->find();
+        var_dump($product->toJson());
+        $product->name = 'computer';
+        $product->save();
+    }
 }

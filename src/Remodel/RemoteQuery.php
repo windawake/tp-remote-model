@@ -3,7 +3,6 @@
 namespace TpRemoteModel\Remodel;
 
 use think\db\Query;
-use TpRemoteModel\Examples\Models\ProductRemote;
 
 class RemoteQuery extends Query {
     protected $lastInsID;
@@ -208,9 +207,6 @@ class RemoteQuery extends Query {
 
     protected function parseExpress()
     {
-        if (get_class($this->model) == ProductRemote::class) {
-            $tmp = 11;
-        }
         $options = $this->getOptions();
 
         if ($this->builder) {
