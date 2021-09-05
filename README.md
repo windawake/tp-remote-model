@@ -1,5 +1,7 @@
 # tp-remote-model
-thinkphp调用的model代码无需修改，可以直接实现服务化。原理是将远程api接口，转为tp5 model，兼容80%以上的model方法。目前仅支持tp5.0，tp5.1。
+- thinkphp调用的model代码无需修改，可以直接实现服务化。
+- 原理是将远程api接口，转为tp5 model，兼容80%以上的model方法。
+- 目前仅支持tp5.0，tp5.1。
 
 # 快速预览
 
