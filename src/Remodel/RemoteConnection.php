@@ -1,18 +1,34 @@
 <?php
 
-namespace Windawake\TpRemoteModel\Remodel;
+namespace TpRemoteModel\Remodel;
 
-use app\modelRemote\RemoteBuidler;
 use think\db\Connection;
 
-/**
- * mysql数据库驱动
- */
 class RemoteConnection extends Connection
 {
+    // 数据库连接参数配置
+    protected $config = [
+        // 数据库类型
+        'type'            => RemoteBuilder::class,
+        'builder'         => RemoteBuilder::class,
+    ];
 
-    protected $builder = RemoteBuidler::class;
-    protected $builderClassName = RemoteBuidler::class;
+    /**
+     * 架构函数 读取数据库配置信息
+     * @access public
+     * @param  array $config 数据库配置数组
+     */
+    // public function __construct(array $config = [])
+    // {
+    //     parent::__construct($config);
+
+        
+    //     if (!$this->builder) {
+    //         $class = $this->config['builder'];
+    //         // 创建Builder对象
+    //         $this->builder = new $class($this);
+    //     }
+    // }
 
     /**
      * 解析pdo连接的dsn信息

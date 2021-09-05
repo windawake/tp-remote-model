@@ -1,6 +1,6 @@
 <?php
 
-namespace Windawake\TpRemoteModel\Remodel;
+namespace TpRemoteModel\Remodel;
 
 
 use think\Model;

@@ -1,8 +1,9 @@
 <?php
 
-namespace Windawake\TpRemoteModel\Remodel;
+namespace TpRemoteModel\Remodel;
 
 use think\db\Query;
+use TpRemoteModel\Examples\Models\ProductRemote;
 
 class RemoteQuery extends Query {
     protected $lastInsID;
@@ -11,6 +12,7 @@ class RemoteQuery extends Query {
      * @var RemoteModel
      */
     protected $model;
+    protected $builder;
 
     public function select($data = null)
     {
@@ -206,9 +208,18 @@ class RemoteQuery extends Query {
 
     protected function parseExpress()
     {
+        if (get_class($this->model) == ProductRemote::class) {
+            $tmp = 11;
+        }
         $options = $this->getOptions();
 
-        $options['where'] = $this->connection->getBuilder()->tpBuildWhere($options['where'], $options);
+        if ($this->builder) {
+            $builder = $this->builder;
+        } else {
+            $builder = $this->connection->getBuilder();
+
+        }
+        $options['where'] = $builder->tpBuildWhere($options['where'], $options);
 
         return $options;
     }

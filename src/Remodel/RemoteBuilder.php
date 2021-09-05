@@ -1,11 +1,9 @@
 <?php
 
-namespace Windawake\TpRemoteModel\Remodel;
+namespace TpRemoteModel\Remodel;
 
 use think\db\Builder;
 use think\db\Query;
-use think\Exception;
-
 
 class RemoteBuilder extends Builder
 {
@@ -63,14 +61,12 @@ class RemoteBuilder extends Builder
     }
 
     // where子单元分析
-    protected function tpParseWhereItem($field, $val, $rule = '', $options = [], $binds = [], $bindName = null)
+    protected function tpParseWhereItem($field, $val, $rule = '', $options = [])
     {
-        // 字段分析
-        $key = $field ? $this->parseKey($field, $options) : '';
 
         // 查询规则和条件
         if (!is_array($val)) {
-            $val = is_null($val) ? ['null', ''] : ['=', $val];
+            $val = is_null($val) ? ['NULL', ''] : ['=', $val];
         }
         list($exp, $value) = $val;
 
@@ -92,11 +88,9 @@ class RemoteBuilder extends Builder
 
         // 检测操作符
         if (!in_array($exp, $this->exp)) {
-            $exp = strtolower($exp);
+            $exp = strtoupper($exp);
             if (isset($this->exp[$exp])) {
                 $exp = $this->exp[$exp];
-            } else {
-                throw new Exception('where express error:' . $exp);
             }
         }
 

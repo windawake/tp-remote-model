@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="./thinkphp/base.php"
+         colors="true">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./vendor/windawake/tp-remote2model/tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
