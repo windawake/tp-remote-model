@@ -1,9 +1,9 @@
 # tp-remote-model
-远程api接口，转为tp5 model，快速实现服务化。目前仅支持tp5.0，tp5.1。
+tp调用的model代码无需修改，直接实现服务化。原理是将远程api接口，转为tp5 model。目前仅支持tp5.0，tp5.1。
 
 # 快速预览
 
-### composer require windawake/tp-remote2model@dev-master
+### composer require windawake/tp-remote2model:dev-main
 
 ### 安装phpunit，把phpunit.xml复制到项目根目录下
 
